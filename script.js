@@ -73,7 +73,7 @@ Vue.component('osubutton', {
             this.$emit("osubtnclicked");
         }
     },
-    template: '<img v-bind:style="style" v-bind:class="{noAnim: isNotAnim}" id="logo" class="animated pulse infinite" @mouseover="mouseOver" @mouseleave="mouseLeave" @click="click" src="resources/logo.png"></img>'
+    template: '<img v-bind:style="style" v-bind:class="{noAnim: isNotAnim}" id="logo" @mouseover="mouseOver" @mouseleave="mouseLeave" @click="click" src="resources/logo.png"></img>'
 })
 
 Vue.component('osuoption', {

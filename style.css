@@ -36,7 +36,21 @@ body {
     animation: none !important;
 }
 
+
+@keyframes logo-pulse {
+    0% {
+        transform: scale(0.96);
+    }
+    85% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.96);
+    }
+}
+
 img#logo {
+    animation: logo-pulse 1s infinite;
     z-index: 0;
     transition: height .2s;
     transition-timing-function: linear;

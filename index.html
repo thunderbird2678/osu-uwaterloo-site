@@ -5,21 +5,26 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="style.css">
     <title>osu!UWaterloo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <img
-        v-bind:style="style"
-        id="logo"
-        @mouseover="mouseOver"
-        @mouseleave="mouseLeave"
-        src="resources/logo.png">    
-    </img>
-<!--     <a href="https://discord.gg/umqqtjR">
+    <div id="osuButtonContainer">
+        <div id="buttonWrapper">
+            <osuButton @osubtnclicked="showOptions" @osubtnclear="clearOptions"></osuButton>
+            <div id="allOptions">
+                <osuOption ref="optionsMenu" v-for="option in options" v-bind:id="option.id" v-bind:title="option.title"></osuOption>
+            </div>
+        </div>
+    </div>
+    <!--     <a href="https://discord.gg/umqqtjR">
         <img id="discord" src="resources/discord.png"></img>
     </a> -->
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="script.vue"></script>
+<script src="script.js"></script>
+
 </html>

@@ -1,37 +1,79 @@
+function animateCSS(element, animationName, inf) {
+    const node = document.querySelector(element)
+    node.classList.add('animated', animationName)
+
+    function handleAnimationEnd() {
+        node.classList.remove('animated', animationName)
+        node.removeEventListener('animationend', handleAnimationEnd)
+    }
+
+    if (!inf) {
+        node.addEventListener('animationend', handleAnimationEnd)
+    }
+
+    if (inf) {
+        node.classList.add('infinite');
+    }
+}
+
+function unanimateCSS(element, animationName) {
+    const node = document.querySelector(element)
+    node.classList.remove('animated', animationName)
+    node.classList.remove('infinite')
+}
+
 Vue.component('osubutton', {
     data: function() {
         return {
             isClicked: false,
+            isNotAnim: false,
             style: {
-                height: '60vh',
-                verticalAlign: 'middle'
+                height: '75vh',
+                verticalAlign: 'middle',
+                cursor: 'default',
             }
         }
     },
     methods: {
         mouseOver: function() {
-            this.style.height = '80vh';
+            this.isNotAnim = true;
+            var self = this;
+            setTimeout(function() {
+                self.isNotAnim = false;
+            }, 200);
+            // animateCSS('#logo', 'pulse', true);
+            console.log(this.style);
+            this.style.height = '85vh';
             this.style.cursor = 'pointer';
-            // console.log("osubutton mouseover");
+
         },
         mouseLeave: function() {
-            this.style.height = !this.isClicked ? '60vh' : '80vh';
-            // console.log("osubutton mouseleave");
+            this.isNotAnim = true;
+            var self = this;
+            setTimeout(function() {
+                self.isNotAnim = false;
+            }, 200);
+            console.log(this.style);
+            this.style.height = !this.isClicked ? '75vh' : '85vh';
         },
         click: function() {
+            if (this.isClicked != true) {
+                setTimeout(() => {
+                    console.log("clearing menu!");
+                    this.isClicked = false;
+                    this.style.height = '75vh';
+                    this.$emit("osubtnclear");
+                }, 10000)
+            } else {
+
+            }
             console.log("osubutton click");
             this.isClicked = true;
-            this.style.height = '80vh';
+            this.style.height = '85vh';
             this.$emit("osubtnclicked");
-            setTimeout(() => {
-                console.log("clearing menu!");
-                this.isClicked = false;
-                this.style.height = '60vh';
-                this.$emit("osubtnclear");
-            }, 10000)
         }
     },
-    template: '<img v-bind:style="style" id="logo" @mouseover="mouseOver" @mouseleave="mouseLeave" @click="click" src="resources/logo.png"></img>'
+    template: '<img v-bind:style="style" v-bind:class="{noAnim: isNotAnim}" id="logo" class="animated pulse infinite" @mouseover="mouseOver" @mouseleave="mouseLeave" @click="click" src="resources/logo.png"></img>'
 })
 
 Vue.component('osuoption', {
@@ -81,26 +123,3 @@ new Vue({
         },
     }
 })
-
-// var osuButton = new Vue({
-//     el: "#logo",
-//     data: {
-//         style: {
-//             display: 'block',
-//             height: '60vh',
-//             marginLeft: 'auto',
-//             marginRight: 'auto',
-//             marginTop: '10vh'
-//         }
-//     },
-//     methods: {
-//         mouseOver: function() {
-//             this.style.height = '100vh';
-//             console.log("ehh?");
-//         },
-//         mouseLeave: function() {
-//             this.style.height = '60vh';
-//             console.log("ehh!");
-//         }
-//     }
-// })

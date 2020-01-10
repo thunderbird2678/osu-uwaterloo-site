@@ -1,5 +1,5 @@
 body {
-    background-image: url("resources/triangles.png");
+    overflow: hidden;
 }
 
 .helper {
@@ -32,8 +32,14 @@ body {
     text-align: left;
 }
 
+.noAnim {
+    animation: none !important;
+}
+
 img#logo {
     z-index: 0;
+    transition: height .2s;
+    transition-timing-function: linear;
 }
 
 .option {
@@ -61,4 +67,25 @@ img#discord {
     margin-left: auto;
     margin-right: auto;
     height: 10vh;
+}
+
+#background {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+#triangles {
+    position: absolute;
+    top: 0;
+    filter: contrast(500%) brightness(250%);
+    width: 100vw;
+}
+
+#waterloo {
+    position: absolute;
+    top: 0;
+    opacity: .4;
+    width: 100vw;
+    filter: saturate(150%);
 }

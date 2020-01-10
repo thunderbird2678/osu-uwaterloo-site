@@ -8,6 +8,7 @@
     <title>osu!UWaterloo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
 </head>
 
@@ -19,6 +20,10 @@
                 <osuOption ref="optionsMenu" v-for="option in options" v-bind:id="option.id" v-bind:title="option.title"></osuOption>
             </div>
         </div>
+    </div>
+    <div id="background">
+        <img id="triangles" src="resources/triangles.png">
+        <img id="waterloo" src="resources/waterloo.jpg">
     </div>
     <!--     <a href="https://discord.gg/umqqtjR">
         <img id="discord" src="resources/discord.png"></img>

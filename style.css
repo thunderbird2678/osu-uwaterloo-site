@@ -3,13 +3,13 @@ body
 	background-image:url("resources/triangles.png");
 }
 
-img#logo {
+/*img#logo {
     display: block;
     height: 60vh;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10vh;
-}
+}*/
 
 img#discord {
     margin-top: 5vh;
@@ -17,10 +17,4 @@ img#discord {
     margin-left: auto;
     margin-right: auto;
     height: 10vh;
-}
-
-img#logo:hover {
-  cursor: pointer;
-  animation-name: bounce;
-  -moz-animation-name: bounce;
 }

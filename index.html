@@ -9,10 +9,17 @@
     <title>osu!UWaterloo</title>
 </head>
 <body>
-    <img id="logo" src="resources/logo.png"></img>
-    <a href="https://discord.gg/umqqtjR">
+    <img
+        v-bind:style="style"
+        id="logo"
+        @mouseover="mouseOver"
+        @mouseleave="mouseLeave"
+        src="resources/logo.png">    
+    </img>
+<!--     <a href="https://discord.gg/umqqtjR">
         <img id="discord" src="resources/discord.png"></img>
-    </a>
+    </a> -->
 </body>
-
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="script.vue"></script>
 </html>

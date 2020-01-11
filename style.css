@@ -41,9 +41,11 @@ body {
     0% {
         transform: scale(0.96);
     }
+
     85% {
         transform: scale(1);
     }
+
     100% {
         transform: scale(0.96);
     }
@@ -59,20 +61,7 @@ img#logo {
 .option {
     height: 15vh;
     align-items: center;
-    flex-direction: row;
-    background: rgba(255, 215, 0, .75);
-    /* box-shadow: -20vw 0 gold; */
-    padding-left: 22vw;
-    margin-left: -20vw;
-    font-family: Exo;
-    margin-top: 2vh;
-    font-size: 2.5em;
-    font-weight: 800;
-    border-top: rgba(0, 0, 0, .75) solid 2vh;
-    border-right: rgba(0, 0, 0, .75) solid 2vh;
-    border-bottom: rgba(0, 0, 0, .75) solid 2vh;
-    font-style: italic;
-    width: 52vw !important;
+    margin-left: -22vw;
 }
 
 img#discord {
@@ -102,4 +91,8 @@ img#discord {
     opacity: .4;
     width: 100vw;
     filter: saturate(150%);
+}
+
+img.optionImage {
+    height: 14vh;
 }

@@ -36,40 +36,38 @@ Vue.component('osubutton', {
     },
     methods: {
         mouseOver: function() {
-            this.isNotAnim = true;
-            var self = this;
-            setTimeout(function() {
-                self.isNotAnim = false;
-            }, 200);
-            // animateCSS('#logo', 'pulse', true);
-            console.log(this.style);
+            // this.isNotAnim = true;
+            // var self = this;
+            // setTimeout(function() {
+            //     self.isNotAnim = false;
+            // }, 500);
+            // // animateCSS('#logo', 'pulse', true);
+            // console.log(this.style);
             this.style.height = '85vh';
             this.style.cursor = 'pointer';
 
         },
         mouseLeave: function() {
-            this.isNotAnim = true;
-            var self = this;
-            setTimeout(function() {
-                self.isNotAnim = false;
-            }, 200);
-            console.log(this.style);
-            this.style.height = !this.isClicked ? '75vh' : '85vh';
+            // this.isNotAnim = true;
+            // var self = this;
+            // setTimeout(function() {
+            //     self.isNotAnim = false;
+            // }, 500);
+            // console.log(this.style);
+            this.style.height = '75vh';
         },
         click: function() {
-            if (this.isClicked != true) {
-                setTimeout(() => {
-                    console.log("clearing menu!");
-                    this.isClicked = false;
-                    this.style.height = '75vh';
-                    this.$emit("osubtnclear");
-                }, 10000)
-            } else {
-
-            }
+            // if (this.isClicked != true) {
+            //     setTimeout(() => {
+            //         console.log("clearing menu!");
+            //         this.isClicked = false;
+            //         this.style.height = '75vh';
+            //         this.$emit("osubtnclear");
+            //     }, 10000)
+            // }
             console.log("osubutton click");
             this.isClicked = true;
-            this.style.height = '85vh';
+            // this.style.height = '85vh';
             this.$emit("osubtnclicked");
         }
     },
@@ -77,7 +75,7 @@ Vue.component('osubutton', {
 })
 
 Vue.component('osuoption', {
-    props: ['title', 'icon', 'subheader', 'id'],
+    props: ['filename'],
     data: function() {
         return {
             style: {
@@ -97,17 +95,18 @@ Vue.component('osuoption', {
             // console.log("osuoption mouseleave");
         }
     },
-    template: '<div v-bind:style="style" class="option" @mouseover="mouseOver" @mouseleave="mouseLeave"><span>{{title}}</span></div>'
+    // template: '<div v-bind:style="style" class="option" @mouseover="mouseOver" @mouseleave="mouseLeave"><span>{{title}}</span></div>'
+    template: '<div v-bind:style="style" class="option" @mouseover="mouseOver" @mouseleave="mouseLeave"><img class="optionImage" v-bind:src="filename"/></div>'
 })
 
 new Vue({
     el: "#osuButtonContainer",
     data: {
         options: [
-            { id: 1, title: "Discord Server", subheader: "Come hang out and chat with us!" },
-            { id: 2, title: "About our Members", subheader: "Who exactly are all the players at osu!UW?" },
-            { id: 3, title: "Events", subheader: "What we'll be up to for the next little while" },
-            { id: 4, title: "Contact Us", subheader: "We'll do our best to get back to you!" }
+            { filename: "resources/discordButton.png" },
+            { filename: "resources/membersButton.png" },
+            { filename: "resources/eventsButton.png" },
+            { filename: "resources/contactButton.png" }
         ]
     },
     methods: {

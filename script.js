@@ -71,7 +71,12 @@ Vue.component('osubutton', {
             this.$emit("osubtnclicked");
         }
     },
-    template: '<img v-bind:style="style" v-bind:class="{noAnim: isNotAnim}" id="logo" @mouseover="mouseOver" @mouseleave="mouseLeave" @click="click" src="resources/logo.png"></img>'
+    template: `
+    <div id="logo-container" style="position: relative">
+        <img v-bind:style="style" v-bind:class="{noAnim: isNotAnim}" id="logo" @mouseover="mouseOver" @mouseleave="mouseLeave" @click="click" src="resources/logo.png"></img>
+        <img id="logo-overlay" src="resources/logo.png"></img>
+    </div>
+    `
 })
 
 Vue.component('osuoption', {

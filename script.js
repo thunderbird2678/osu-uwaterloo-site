@@ -78,14 +78,12 @@ Vue.component('osuoption', {
     props: ['filename'],
     data: function() {
         return {
-            style: {
-                display: "none"
-            }
+            isOpen: false
         }
     },
     methods: {
         toggleOption: function() {
-            this.style.display = (this.style.display === "flex") ? "none" : "flex";
+            this.isOpen = !this.isOpen;
             console.log("Toggled option!");
         },
         mouseOver: function() {
@@ -96,7 +94,7 @@ Vue.component('osuoption', {
         }
     },
     // template: '<div v-bind:style="style" class="option" @mouseover="mouseOver" @mouseleave="mouseLeave"><span>{{title}}</span></div>'
-    template: '<div v-bind:style="style" class="option" @mouseover="mouseOver" @mouseleave="mouseLeave"><img class="optionImage" v-bind:src="filename"/></div>'
+    template: '<div v-bind:class="{open: isOpen}" class="option" @mouseover="mouseOver" @mouseleave="mouseLeave"><img class="optionImage" v-bind:src="filename"/></div>'
 })
 
 new Vue({

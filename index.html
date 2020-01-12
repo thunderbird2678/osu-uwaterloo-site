@@ -17,13 +17,18 @@
         <div id="buttonWrapper">
             <osuButton @osubtnclicked="showOptions" @osubtnclear="clearOptions"></osuButton>
             <div id="allOptions">
-                <osuOption ref="optionsMenu" v-for="option in options" v-bind:filename="option.filename"></osuOption>
+                <osuOption ref="optionsMenu" v-for="option in options" v-bind:filename="option.filename">
+                </osuOption>
             </div>
         </div>
     </div>
     <div id="background">
-        <img id="triangles" src="resources/triangles.png">
-        <img id="waterloo" src="resources/waterloo.jpg">
+        <div class="bgWrapper">
+            <img id="triangles" src="resources/triangles.png">
+        </div>
+        <div class="bgWrapper">
+            <img id="waterloo" src="resources/waterloo.jpg">
+        </div>
     </div>
     <!--     <a href="https://discord.gg/umqqtjR">
         <img id="discord" src="resources/discord.png"></img>

@@ -74,7 +74,6 @@ Vue.component('osubutton', {
     template: `
     <div id="logo-container" style="position: relative">
         <img v-bind:style="style" v-bind:class="{noAnim: isNotAnim}" id="logo" @mouseover="mouseOver" @mouseleave="mouseLeave" @click="click" src="resources/logo.png"></img>
-        <img id="logo-overlay" src="resources/logo.png"></img>
     </div>
     `
 })
@@ -83,7 +82,8 @@ Vue.component('osuoption', {
     props: ['filename'],
     data: function() {
         return {
-            isOpen: false
+            isOpen: false,
+            isHovered: false
         }
     },
     methods: {
@@ -92,14 +92,14 @@ Vue.component('osuoption', {
             console.log("Toggled option!");
         },
         mouseOver: function() {
-            // console.log("osuoption mouseover");
+            this.isHovered = true;
         },
         mouseLeave: function() {
-            // console.log("osuoption mouseleave");
+            this.isHovered = false;
         }
     },
     // template: '<div v-bind:style="style" class="option" @mouseover="mouseOver" @mouseleave="mouseLeave"><span>{{title}}</span></div>'
-    template: '<div v-bind:class="{open: isOpen}" class="option" @mouseover="mouseOver" @mouseleave="mouseLeave"><img class="optionImage" v-bind:src="filename"/></div>'
+    template: '<div v-bind:class="{open: isOpen, hover: isHovered}" class="option" @mouseover="mouseOver" @mouseleave="mouseLeave"><img class="optionImage" v-bind:src="filename"/></div>'
 })
 
 new Vue({

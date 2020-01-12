@@ -44,9 +44,11 @@ body {
     0% {
         transform: scale(0.96);
     }
-    96% {
+
+    85% {
         transform: scale(1);
     }
+
     100% {
         transform: scale(0.96);
     }
@@ -56,9 +58,11 @@ body {
     0% {
         transform: scale(1.01);
     }
+
     96% {
         transform: scale(1);
     }
+
     100% {
         transform: scale(1.01);
     }
@@ -72,13 +76,14 @@ img#logo {
     animation: logo-pulse 1s infinite;
     transition: height .2s;
     transition-timing-function: linear;
+    border-radius: 35vh;
 }
 
 img#logo-overlay {
     animation: overlay-pulse 1s infinite;
     position: absolute;
     left: 0;
-    right:0;
+    right: 0;
     top: 0;
     bottom: 0;
     width: 100%;
@@ -96,7 +101,7 @@ img#logo-overlay {
     max-width: 0px;
     transform: translateX(-75vw);
     filter: opacity(0);
-    transition: all 0.4s ease;
+    transition: all 0.2s ease;
 }
 
 .option.open {
@@ -104,6 +109,12 @@ img#logo-overlay {
     max-width: 100vw;
     transform: translateX(-22vw);
     filter: opacity(1);
+}
+
+.option.hover {
+    transform: translateX(-20vw);
+    filter: brightness(115%);
+    cursor: pointer;
 }
 
 img#discord {
@@ -121,18 +132,25 @@ img#discord {
 }
 
 #triangles {
-    position: absolute;
-    top: 0;
     filter: contrast(500%) brightness(250%);
-    width: 100vw;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 #waterloo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .4;
+    filter: saturate(150%);
+}
+
+.bgWrapper {
+    width: 100vw;
+    height: 100vh;
     position: absolute;
     top: 0;
-    opacity: .4;
-    width: 100vw;
-    filter: saturate(150%);
 }
 
 img.optionImage {

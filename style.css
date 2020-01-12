@@ -64,6 +64,7 @@ img#logo {
 .option {
     display: flex;
     height: 15vh;
+    margin-top: 1vh;
     align-items: center;
     width: 0;
     max-width: 0px;
@@ -109,5 +110,5 @@ img#discord {
 }
 
 img.optionImage {
-    height: 14vh;
+    height: 100%;
 }

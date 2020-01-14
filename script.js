@@ -28,9 +28,7 @@ Vue.component('osubutton', {
             isClicked: false,
             isNotAnim: false,
             style: {
-                height: '75vh',
-                verticalAlign: 'middle',
-                cursor: 'default',
+
             }
         }
     },
@@ -43,8 +41,7 @@ Vue.component('osubutton', {
             // }, 500);
             // // animateCSS('#logo', 'pulse', true);
             // console.log(this.style);
-            this.style.height = '85vh';
-            this.style.cursor = 'pointer';
+
 
         },
         mouseLeave: function() {
@@ -54,7 +51,6 @@ Vue.component('osubutton', {
             //     self.isNotAnim = false;
             // }, 500);
             // console.log(this.style);
-            this.style.height = '75vh';
         },
         click: function() {
             // if (this.isClicked != true) {

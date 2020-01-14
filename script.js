@@ -79,7 +79,7 @@ Vue.component('osubutton', {
 })
 
 Vue.component('osuoption', {
-    props: ['filename'],
+    props: ['filename', 'url'],
     data: function() {
         return {
             isOpen: false,
@@ -99,14 +99,15 @@ Vue.component('osuoption', {
         }
     },
     // template: '<div v-bind:style="style" class="option" @mouseover="mouseOver" @mouseleave="mouseLeave"><span>{{title}}</span></div>'
-    template: '<div v-bind:class="{open: isOpen, hover: isHovered}" class="option" @mouseover="mouseOver" @mouseleave="mouseLeave"><img class="optionImage" v-bind:src="filename"/></div>'
+    // template: '<div v-bind:class="{open: isOpen, hover: isHovered}" class="option" @mouseover="mouseOver" @mouseleave="mouseLeave"><img class="optionImage" v-bind:src="filename"/></div>'
+    template: '<div v-bind:class="{open: isOpen, hover: isHovered}" class="option" @mouseover="mouseOver" @mouseleave="mouseLeave"><a class="optionImage" v-bind:href="url"><img class="optionImage" v-bind:src="filename"/></a></div> '
 })
 
 new Vue({
     el: "#osuButtonContainer",
     data: {
         options: [
-            { filename: "resources/discordButton.png" },
+            { filename: "resources/discordButton.png", url: "https://discord.gg/umqqtjR" },
             { filename: "resources/membersButton.png" },
             { filename: "resources/eventsButton.png" },
             { filename: "resources/contactButton.png" }

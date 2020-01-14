@@ -17,7 +17,7 @@
         <div id="buttonWrapper">
             <osuButton @osubtnclicked="showOptions" @osubtnclear="clearOptions"></osuButton>
             <div id="allOptions">
-                <osuOption ref="optionsMenu" v-for="option in options" v-bind:filename="option.filename">
+                <osuOption ref="optionsMenu" v-for="option in options" v-bind:filename="option.filename" v-bind:url="option.url">
                 </osuOption>
             </div>
         </div>

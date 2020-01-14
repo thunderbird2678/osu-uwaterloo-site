@@ -108,7 +108,7 @@ new Vue({
     data: {
         options: [
             { filename: "resources/discordButton.png", url: "https://discord.gg/umqqtjR" },
-            { filename: "resources/membersButton.png" },
+            { filename: "resources/membersButton.png", url: "members.html" },
             { filename: "resources/eventsButton.png" },
             { filename: "resources/contactButton.png" }
         ]

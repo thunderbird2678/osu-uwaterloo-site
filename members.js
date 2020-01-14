@@ -10,22 +10,25 @@ Vue.component('clubmembers', {
             <h5>{{role}}</h5>
         </div>
         <div id="avatarWrapper">
-        	<img id="avatar" v-bind:src="avatar" class="card-img-top">
+            <img id="avatar" v-bind:src="avatar" class="card-img-top">
         </div>
         <div class="card-body">
             <h5 class="card-title">{{username}}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{name}}</h6>
             <p class="card-text">{{blurb}}</p>
-		  	<div class="card-footer text-muted">
-	            <a v-bind:href="osu" class="card-link">
-	            	<img class="osuIcon" src="resources/osuicon.png"></img>
-	            </a>
-	            <a href="https://discord.gg/umqqtjR" class="card-link">
-	            	<i class="fab fa-discord"></i>
-	            	<span class="tooltiptext"> {{discord}} </span>
-            	</a>
-	            <a v-bind:href="email" class="card-link"><i class="fas fa-envelope"></i></a>
-		  	</div>
+            <div class="card-footer text-muted">
+                <a v-bind:href="osu" class="card-link">
+                    <img class="osuIcon" src="resources/osuicon.png"></img>
+                </a>
+                <a href="https://discord.gg/umqqtjR" class="card-link">
+                    <i class="fab fa-discord"></i>
+                    <span class="discordtooltip"> {{discord}} </span>
+                </a>
+                <a v-bind:href="'mailto:' + email" class="card-link" v-bind:class="{noEmail: email === undefined}">
+                    <i class="fas fa-envelope"></i>
+                    <span class="emailtooltip"> {{email}} </span>
+                </a>
+            </div>
         </div>
     </div>    
     `
@@ -39,7 +42,7 @@ new Vue({
             avatar: "https://static-cdn.jtvnw.net/jtv_user_pictures/781bd995-bb5b-4293-817a-babbd50c468f-profile_image-300x300.png",
             username: "-thunderbird",
             name: "Kai Huang",
-            blurb: "3A Computer Engineering student and the most dedicated NM1 player you'll ever find. Anything below 99% accuracy or above 100 UR is considered disgraceful.",
+            blurb: "Third year computer engineering student and the dedicated NM1 onetrick. Anything below 99% accuracy or above 100 UR is considered disgraceful.",
             discord: "thunderbird#2678",
             email: "k74huang@uwaterloo.ca",
             osu: "https://osu.ppy.sh/u/3388082"

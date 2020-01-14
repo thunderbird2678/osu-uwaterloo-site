@@ -16,7 +16,9 @@
 
 <body>
     <div id="main">
-        <h1 id="execTitle"> Club Executives </h1>
+        <div class="titleWrapper">
+            <h1 id="execTitle"> Club Executives </h1>
+        </div>
         <div id="execs">
             <clubMembers ref="execs" v-for="exec in execs" v-bind:role="exec.role" v-bind:username="exec.username" v-bind:name="exec.name" v-bind:avatar="exec.avatar" v-bind:blurb="exec.blurb" v-bind:discord="exec.discord" v-bind:email="exec.email" v-bind:osu="exec.osu"></clubMembers>
         </div>

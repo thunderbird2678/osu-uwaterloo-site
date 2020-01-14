@@ -18,7 +18,7 @@ Vue.component('clubmembers', {
             <p class="card-text">{{blurb}}</p>
             <div class="card-footer text-muted">
                 <a v-bind:href="osu" class="card-link">
-                    <img class="osuIcon" src="resources/osuicon.png"></img>
+                    <img class="osuIcon" src="resources/osuIcon.png"></img>
                 </a>
                 <a href="https://discord.gg/umqqtjR" class="card-link">
                     <i class="fab fa-discord"></i>

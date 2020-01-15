@@ -27,53 +27,17 @@ Vue.component('osubutton', {
         return {
             isClicked: false,
             isNotAnim: false,
-            style: {
-                height: '75vh',
-                verticalAlign: 'middle',
-                cursor: 'default',
-            }
         }
     },
     methods: {
-        mouseOver: function() {
-            // this.isNotAnim = true;
-            // var self = this;
-            // setTimeout(function() {
-            //     self.isNotAnim = false;
-            // }, 500);
-            // // animateCSS('#logo', 'pulse', true);
-            // console.log(this.style);
-            this.style.height = '85vh';
-            this.style.cursor = 'pointer';
-
-        },
-        mouseLeave: function() {
-            // this.isNotAnim = true;
-            // var self = this;
-            // setTimeout(function() {
-            //     self.isNotAnim = false;
-            // }, 500);
-            // console.log(this.style);
-            this.style.height = '75vh';
-        },
         click: function() {
-            // if (this.isClicked != true) {
-            //     setTimeout(() => {
-            //         console.log("clearing menu!");
-            //         this.isClicked = false;
-            //         this.style.height = '75vh';
-            //         this.$emit("osubtnclear");
-            //     }, 10000)
-            // }
-            console.log("osubutton click");
             this.isClicked = true;
-            // this.style.height = '85vh';
             this.$emit("osubtnclicked");
         }
     },
     template: `
     <div id="logo-container" style="position: relative">
-        <img v-bind:style="style" v-bind:class="{noAnim: isNotAnim}" id="logo" @mouseover="mouseOver" @mouseleave="mouseLeave" @click="click" src="resources/logo.png"></img>
+        <img v-bind:class="{noAnim: isNotAnim}" id="logo" @click="click" src="resources/logo.png"></img>
     </div>
     `
 })

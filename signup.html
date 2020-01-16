@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>osu!UW Members</title>
+    <title>osu!UW Signup</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="members.css">
@@ -17,12 +17,9 @@
 <body>
     <div id="main">
         <osuButton @osubtnclicked="goBack" v-bind:src="src"></osuButton>
-        <div class="titleWrapper">
-            <h1 id="execTitle"> Club Executives </h1>
-        </div>
         <div id="execWrapper">
-            <div id="execs">
-                <clubMembers ref="execs" v-for="exec in execs" v-bind:role="exec.role" v-bind:username="exec.username" v-bind:name="exec.name" v-bind:avatar="exec.avatar" v-bind:blurb="exec.blurb" v-bind:discord="exec.discord" v-bind:email="exec.email" v-bind:osu="exec.osu"></clubMembers>
+            <div id="execs" style="height: 85vh;">
+                <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=685YobAEf0GogoWyMNQSrR_ZcdSydT5PjOE73rf5NA9UMlE4U0ZMTVk0SzBGR0Q1WFNYVjUxWk9IQi4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
             </div>
         </div>
     </div>

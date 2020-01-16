@@ -92,7 +92,7 @@ img#logo {
     height: 37.5em;
 }
 
-img#logo:hover{
+img#logo:hover {
     height: 42.5em;
 }
 
@@ -172,4 +172,11 @@ img#discord {
 
 .optionImage {
     height: 100%;
+}
+
+.wusa {
+    position: absolute;
+    width: 7vw;
+    bottom: 0px;
+    right: 20px;
 }

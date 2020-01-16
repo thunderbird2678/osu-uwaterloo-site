@@ -1,3 +1,24 @@
+Vue.component('osubutton', {
+    props: ['src'],
+    data: function() {
+        return {
+            isClicked: false,
+            isNotAnim: false,
+        }
+    },
+    methods: {
+        click: function() {
+            this.isClicked = true;
+            this.$emit("osubtnclicked");
+        }
+    },
+    template: `
+    <div id="logo-container" style="position: relative">
+        <img v-bind:class="{noAnim: isNotAnim}" id="logo" @click="click" v-bind:src="src"></img>
+    </div>
+    `
+})
+
 Vue.component('clubmembers', {
     props: ['role', 'avatar', 'username', 'name', 'blurb', 'discord', 'email', 'osu'],
     data: function() {
@@ -37,6 +58,7 @@ Vue.component('clubmembers', {
 new Vue({
     el: "#main",
     data: {
+        src: "resources/logoNoText.png",
         execs: [{
             role: "President",
             avatar: "https://static-cdn.jtvnw.net/jtv_user_pictures/781bd995-bb5b-4293-817a-babbd50c468f-profile_image-300x300.png",
@@ -80,5 +102,10 @@ new Vue({
             osu: "https://osu.ppy.sh/u/3214844"
         }],
         members: []
+    },
+    methods: {
+        goBack() {
+            window.history.back();
+        }
     }
 })

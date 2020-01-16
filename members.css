@@ -166,3 +166,27 @@ h1#execTitle {
 .noEmail {
     visibility: collapse;
 }
+
+#osuButtonContainer {
+    height: 0vh;
+    width: 0vw;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25vw;
+}
+
+img#logo {
+    bottom: -100px;
+    left: -100px;
+    position: fixed;
+    height: 20em;
+}
+
+img#logo:hover {
+    height: 22em;
+}

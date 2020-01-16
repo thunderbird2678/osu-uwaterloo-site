@@ -23,6 +23,7 @@ function unanimateCSS(element, animationName) {
 }
 
 Vue.component('osubutton', {
+    props: ['src'],
     data: function() {
         return {
             isClicked: false,
@@ -37,7 +38,7 @@ Vue.component('osubutton', {
     },
     template: `
     <div id="logo-container" style="position: relative">
-        <img v-bind:class="{noAnim: isNotAnim}" id="logo" @click="click" src="resources/logo.png"></img>
+        <img v-bind:class="{noAnim: isNotAnim}" id="logo" @click="click" v-bind:src="src"></img>
     </div>
     `
 })
@@ -70,6 +71,7 @@ Vue.component('osuoption', {
 new Vue({
     el: "#osuButtonContainer",
     data: {
+        src: "resources/logo.png",
         options: [
             { filename: "resources/discordButton.png", url: "https://discord.gg/umqqtjR" },
             { filename: "resources/membersButton.png", url: "members.html" },
@@ -87,6 +89,6 @@ new Vue({
             for (i = 0; i < Object.keys(this.$refs.optionsMenu).length; i++) {
                 this.$refs.optionsMenu[i].toggleOption();
             }
-        },
+        }
     }
 })

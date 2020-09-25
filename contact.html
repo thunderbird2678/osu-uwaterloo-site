@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="members.css">
+    <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b44688c9f5.js" crossorigin="anonymous"></script>
     <style>
     .card {
         display: flex;
@@ -31,33 +33,13 @@
 
 <body>
     <div id="main">
-        <osuButton @osubtnclicked="goBack" v-bind:src="src"></osuButton>
-        <div id="execWrapper">
-            <div id="execs" style="height: 85vh;">
-                <div class="card" style="width:35%;">
-                    <div class=imgContainer>
-                        <img class="card-img-top" src="resources/discordLogo.svg">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Discord</h5>
-                        <p class="card-text">
-                            Our Discord server is our main means of communication and also the method in which we will respond the quickest to any questions or concerns. If you wish to contact the executive team of osu!UWaterloo for any reason and you are familiar with Discord, please join the server with the button on the home page and ping @Club Executive.
-                        </p>
-                    </div>
-                </div>
-                <div class="card" style="width: 35%;">
-                    <div class=imgContainer>
-                        <img class="card-img-top" src="resources/outlookLogo.svg">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Email</h5>
-                        <p class="card-text">
-                            If you prefer email, that's alright too, just keep in mind that the club email is not checked as routinely as Discord. Expect usually a 1-2 day turnaround time for email queries compared to the near instantaneous response we can provide on Discord. If you wish to contact the executive team of osu!UWaterloo for any reason via email, we can be reached at the address: osu@clubs.wusa.ca
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <div class="contactWrapper">
+            <a class="contactLink" href="https://discord.gg/mfWqAFg"><i class="fab fa-discord"></i></a>
+            <a class="contactLink" href="https://www.youtube.com/channel/UC_OgDGdaqTI6D_UPtMwCwIg"><i class="fab fa-youtube"></i></a>
+            <a class="contactLink" href="https://www.twitch.tv/osuuwaterloo"><i class="fab fa-twitch"></i></a>
+            <a class="contactLink" href="mailto:osu@clubs.wusa.ca"><i class="fas fa-envelope-open-text"></i></a>
         </div>
+        <osuButton @osubtnclicked="goBack" v-bind:src="src"></osuButton>
     </div>
     <div id="background">
         <div class="bgWrapper">
